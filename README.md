@@ -5,6 +5,7 @@
 Para poder instalar este proyecto, se necesitan los paquetes "nodejs" y "npm".
 
 CLI> sudo apt install nodejs
+
 CLI> sudo apt install npm
 
 ### Creacióon de un entorno virtual ###
@@ -26,9 +27,11 @@ CLI> source nombre_entorno_virtual/bin/activate
 
 ### Despliegue de Django Oscar ###
 Primero instalamos django oscar
+
 CLI> pip install django-oscar
 
 Luego ejecutamos el siguiente comando
+
 CLI> make sandbox
 
 Este comando desplegará la tienda online (La Pescaleta), aplicacion web (Gadifishing), CMS Wegtail y un blog.
