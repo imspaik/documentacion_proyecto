@@ -41,9 +41,11 @@ Ademas de todo lo anterior creará la base del catalogo de nuestra tienda (categ
 Para lanzar todo y que sea accesible desde el navegador escribimos el comando:
 
 Si queremos que sea accesible desde cualquier host de la red
+
 CLI> python3 sandbox/manage.py runserver 0.0.0.0:8000
 
 Para que solo sea accesible desde nuestro host
+
 CLI> python3 sandbox/manage.py runserver
 
 Y ya podemos acceder desde: http://localhost:8000/
