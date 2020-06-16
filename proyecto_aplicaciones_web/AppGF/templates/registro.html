@@ -1,0 +1,66 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="es">
+	
+<style>
+{% block style %}
+
+body {
+	background-color: black!important;
+}	
+	
+{% endblock %}
+</style>
+
+{% block content %}
+<body>
+
+<br>        <div class="container ">
+           <div class="center wow fadeInDown">
+                <h2>Registro de nuevo usuario</h2>
+           </div>
+
+		<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="form-group col-md-6 mb-0">{{ form.username|as_crispy_field }}
+	
+{{ form.first_name|as_crispy_field }}
+
+
+{{ form.last_name|as_crispy_field }}
+
+
+{{ form.email|as_crispy_field }}
+    
+Foto de Perfil<br><br>
+{{ form.foto_de_perfil }}
+
+
+ <br>   {{ form.provincia|as_crispy_field }}
+
+
+    {{ form.localidad|as_crispy_field }}
+    
+
+    {{ form.experiencia|as_crispy_field }}
+
+
+    {{ form.password1|as_crispy_field }}
+
+
+    {{ form.password2|as_crispy_field }} 
+
+
+    <button type="submit">Registrarse</button></div>
+
+  </form>
+
+ </div>
+
+
+</body>
+</html>
+  {% endblock %} 

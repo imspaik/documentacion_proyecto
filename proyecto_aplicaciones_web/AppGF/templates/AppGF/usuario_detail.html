@@ -1,0 +1,69 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="es">
+	
+<style>
+{% block style %}
+
+body {
+	background-color: black!important;
+}	
+.myboton {
+  padding: 8px 20px !important;
+  background: #c52d2f !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  margin-top: 25px !important;
+  display: inline-block !important;
+}	
+	
+{% endblock %}
+</style>
+
+{% block content %}
+{% if request.user.is_authenticated %}
+{% if user == usuario.user %}
+    <section id="main-slider" class="no-margin">
+<br>
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">{{ user.username }}</h1>
+                                    <a class="myboton" href="{% url 'usuarios_update' user.pk %}" role="button">Editar perfil</a>
+                                    <ul>
+<br><br>
+<p>{{ object.content }}</p>
+<p>Mi nombre de pescador es {{ user.username }}</p>
+<p>Mi nombre real es {{ user.first_name}} {{ user.last_name}}</p>
+<p>Mi correo es {{ user.email }}</p>
+<p>Normalmente pesco en {{ user.usuario.provincia}} en las zonas cercanas a {{ user.usuario.localidad}}  </p>
+<p>Mi experiencia como pescador ha sido {{ object.experiencia_como_pescador}}</p>
+</ul>  
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="{{ MEDIA_URL }}{{ user.usuario.foto_usuario }}" class="img-responsive"><br>
+                                </div>
+
+                </div><!--/.item-->
+    
+
+{% else %}
+<br><br><br><br><br>
+<center>Este no es tu perfil colega, no puedes acceder listillo.</center>
+<br><br><br><br><br><br><br><br>
+{% endif %} 
+{% endif %}
+    </section><!--/#main-slider-->
+</script>
+</body>
+</html>
+{% endblock %}
+
+

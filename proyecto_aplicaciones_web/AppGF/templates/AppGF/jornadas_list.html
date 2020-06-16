@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Jornadas de Pesca</h2>
+    <ul>
+        {% for jornada in object_list %}
+            <li>{{ jornada.fecha_jornada  }} - {{ jornada.zona  }} - {{ jornada.usuario  }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %} 

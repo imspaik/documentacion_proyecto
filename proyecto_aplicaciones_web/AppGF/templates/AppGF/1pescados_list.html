@@ -1,0 +1,43 @@
+{% extends 'base_generic.html' %}
+<style>
+{% block style %}
+.jumbotron {
+	background-color: #319e8a!important;
+}
+body {
+	background-color: #319e8ab0!important;
+}	
+	
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+<div class="jumbotron" >
+<div class="container-fluid">
+<div class='row'>
+	<div class= 'col-sm-6'>
+		<h1>Hola {{ user.username }}</h1>
+		<p class="lead">Estos son los peces que tenemos actualmente en nuestra base de datos</p>
+		<a class="btn btn-lg btn-primary" href="{% url 'pescados_create' %}" role="button">Añadir</a>
+	</div>
+	<div class= 'col-sm-6'><img src='{{ MEDIA_URL }}{{ user.usuario.foto_usuario }}' height="100"></div>
+</div>
+</div></div>
+{% endblock %}
+{% block content %}
+    <h2>ACTUALMENTE TENEMOS ESTOS PESCADOS REGISTRADOS</h2>
+
+    <ul>
+        {% for pescado in object_list %}
+        <div class='row'>
+	<div class= 'col-sm-6' style="text-align:center;">
+            <li><p>El nombre popular segun la provincia es {{ pescado.nombre_comun_pescado  }} <br>
+            <a href='detail/{{ pescado.pk }}'>Su nombre cientifico es: {{ pescado.nombre_cientifico }}</a></li></p>
+            </div>
+	<div class= 'col-sm-6'><img src='{{ MEDIA_URL }}{{ pescado.foto_pescado }}' height="100"></div>
+</div>
+        {% endfor %}
+        
+    </ul>
+
+{% endblock %} 

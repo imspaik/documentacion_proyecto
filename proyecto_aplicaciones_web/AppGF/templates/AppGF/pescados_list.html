@@ -1,0 +1,64 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="es">
+	
+<style>
+{% block style %}
+
+body {
+	background-color: black!important;
+}	
+	
+{% endblock %}
+</style>
+
+{% block content %}
+<body>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'AppGF/galerias.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link href="thumbnail-gallery.css">
+
+</head>
+<body>
+
+<div class="container gallery-container">
+
+<br><p class="page-description text-center lead"> <font color="white">Aquí encontrarás la lista de peces que tenemos registrados en nuestra base de datos</p><br>
+    
+    <div class="tz-gallery">
+
+        <div class="row">
+{% for pescado in object_list %}
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail2"><center><a style="color:black;">Su nombre comun es</a>  <b style="color:black;">{{ pescado.nombre_comun_pescado  }}</b></center><br>
+                    <a class="lightbox" href='{{ MEDIA_URL }}{{ pescado.foto_pescado }}'>
+                        <img src='{{ MEDIA_URL }}{{ pescado.foto_pescado }}' width="300px" height="100px"  alt="{{ pescado.nombre_comun_pescado  }}">
+                    </a>
+                    <div class="caption">
+                        <center>Su nombre cientifico es:<b> {{ pescado.nombre_cientifico }} </b></center><br>
+                        <p>{{ pescado.descripcion_pescado }}</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+    {% endfor %}
+
+    </div>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+</body>
+</html>
+
+{% endblock %} 

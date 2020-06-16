@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>ZonaPesca</h2>
+    <ul>
+        {% for zonap in object_list %}
+            <li>{{ zonap.nombre_zona  }} - {{ captura.coordenadas_zona  }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %} 

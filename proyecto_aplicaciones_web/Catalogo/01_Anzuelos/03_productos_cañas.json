@@ -1,0 +1,288 @@
+[
+{
+    "pk": 77, 
+    "model": "catalogue.product", 
+    "fields": {
+        "rating": null, 
+        "description": "Acero inoxidable. Forjado, recto. Paquete 100 uds.", 
+        "title": "820-SS", 
+        "date_updated": "2013-12-12T16:33:57.426Z", 
+        "upc": "018212", 
+        "is_discountable": true, 
+        "date_created": "2013-12-12T16:33:57.426Z", 
+        "product_options": [], 
+        "slug": "820-SS", 
+        "product_class": 1,
+        "structure": "parent"
+    }
+},
+{
+    "pk": 77, 
+    "model": "catalogue.productcategory", 
+    "fields": {
+        "category": 2, 
+        "product": 77
+    }
+},
+{
+    "pk": 78, 
+    "model": "catalogue.productcategory", 
+    "fields": {
+        "category": 1, 
+        "product": 77
+    }
+},
+{
+    "pk": 100, 
+    "model": "catalogue.productattributevalue", 
+    "fields": {
+        "product": 77, 
+        "attribute": 1, 
+        "value_text": "3,4,5,6,7,8"
+    }
+},
+{
+    "pk": 101, 
+    "model": "catalogue.productattributevalue", 
+    "fields": {
+
+        "product": 77,  
+        "attribute": 2,
+        "value_option": 3  
+    }
+},
+{
+    "pk": 102, 
+    "model": "catalogue.productattributevalue", 
+    "fields": { 
+        "product": 77,  
+        "attribute": 3,
+        "value_integer": 100
+    }
+},
+{
+    "pk": 78, 
+    "model": "catalogue.product", 
+    "fields": {
+        "rating": null, 
+        "description": "Acero inoxidable. Forjado, recto. Caja 100 uds.", 
+        "parent": 77, 
+        "title": "820-SS -- Nº 3", 
+        "date_updated": "2013-12-12T16:33:57.426Z", 
+        "upc": "018213", 
+        "is_discountable": true, 
+        "date_created": "2013-12-12T16:33:57.426Z", 
+        "product_options": [], 
+        "slug": "820-SS3", 
+        "product_class": null,
+        "structure": "child"
+    }
+},
+{
+    "pk": 79, 
+    "model": "catalogue.product", 
+    "fields": {
+        "rating": null, 
+        "description": "Acero inoxidable. Forjado, recto. Caja 100 uds.", 
+        "parent": 77, 
+        "title": "820-SS -- Nº 4", 
+        "date_updated": "2013-12-12T16:33:57.426Z", 
+        "upc": "018214", 
+        "is_discountable": true, 
+        "date_created": "2013-12-12T16:33:57.426Z", 
+        "product_options": [], 
+        "slug": "820-SS4", 
+        "product_class": null,
+        "structure": "child"
+    }
+},
+{
+    "pk": 80, 
+    "model": "catalogue.product", 
+    "fields": {
+        "rating": null, 
+        "description": "Acero inoxidable. Forjado, recto. Caja 100 uds.", 
+        "parent": 77, 
+        "title": "820-SS -- Nº 5", 
+        "date_updated": "2013-12-12T16:33:57.426Z", 
+        "upc": "018215", 
+        "is_discountable": true, 
+        "date_created": "2013-12-12T16:33:57.426Z", 
+        "product_options": [], 
+        "slug": "820-SS5", 
+        "product_class": null,
+        "structure": "child"
+    }
+},
+{
+    "pk": 81, 
+    "model": "catalogue.product", 
+    "fields": {
+        "rating": null, 
+        "description": "Acero inoxidable. Forjado, recto. Caja 100 uds.", 
+        "parent": 77, 
+        "title": "820-SS -- Nº 6", 
+        "date_updated": "2013-12-12T16:33:57.426Z", 
+        "upc": "018216", 
+        "is_discountable": true, 
+        "date_created": "2013-12-12T16:33:57.426Z", 
+        "product_options": [], 
+        "slug": "820-SS6", 
+        "product_class": null,
+        "structure": "child"
+    }
+},
+{
+    "pk": 82, 
+    "model": "catalogue.product", 
+    "fields": {
+        "rating": null, 
+        "description": "Acero inoxidable. Forjado, recto. Caja 100 uds.", 
+        "parent": 77, 
+        "title": "820-SS -- Nº 7", 
+        "date_updated": "2013-12-12T16:33:57.426Z", 
+        "upc": "018217", 
+        "is_discountable": true, 
+        "date_created": "2013-12-12T16:33:57.426Z", 
+        "product_options": [], 
+        "slug": "820-SS7", 
+        "product_class": null,
+        "structure": "child"
+    }
+},
+{
+    "pk": 83, 
+    "model": "catalogue.product", 
+    "fields": {
+        "rating": null, 
+        "description": "Acero inoxidable. Forjado, recto. Caja 100 uds.", 
+        "parent": 77, 
+        "title": "820-SS -- Nº 8", 
+        "date_updated": "2013-12-12T16:33:57.426Z", 
+        "upc": "018218", 
+        "is_discountable": true, 
+        "date_created": "2013-12-12T16:33:57.426Z", 
+        "product_options": [], 
+        "slug": "820-SS8", 
+        "product_class": null,
+        "structure": "child"
+    }
+},
+{
+    "pk": 2, 
+    "model": "partner.partner", 
+    "fields": {
+        "code": "clothing-partner", 
+        "name": "Clothing partner", 
+        "users": []
+    }
+},
+{
+    "pk": 100, 
+    "model": "partner.stockrecord", 
+    "fields": {
+        "price_currency": "EUR", 
+        "product": 78, 
+        "partner_sku": "820-SS3", 
+        "price_retail": null, 
+        "date_updated": "2013-12-13T11:37:08.232Z", 
+        "num_in_stock": 100, 
+        "num_allocated": null, 
+        "low_stock_threshold": null, 
+        "date_created": "2013-12-13T11:37:08.232Z", 
+        "partner": 2, 
+        "price_excl_tax": "10", 
+        "cost_price": null
+    }
+},
+{
+    "pk": 101, 
+    "model": "partner.stockrecord", 
+    "fields": {
+        "price_currency": "EUR", 
+        "product": 79, 
+        "partner_sku": "820-SS4", 
+        "price_retail": null, 
+        "date_updated": "2013-12-13T11:37:08.232Z", 
+        "num_in_stock": 100, 
+        "num_allocated": null, 
+        "low_stock_threshold": null, 
+        "date_created": "2013-12-13T11:37:08.232Z", 
+        "partner": 2, 
+        "price_excl_tax": "11", 
+        "cost_price": null
+    }
+},
+{
+    "pk": 102, 
+    "model": "partner.stockrecord", 
+    "fields": {
+        "price_currency": "EUR", 
+        "product": 80, 
+        "partner_sku": "820-SS5", 
+        "price_retail": null, 
+        "date_updated": "2013-12-13T11:37:08.232Z", 
+        "num_in_stock": 100, 
+        "num_allocated": null, 
+        "low_stock_threshold": null, 
+        "date_created": "2013-12-13T11:37:08.232Z", 
+        "partner": 2, 
+        "price_excl_tax": "12", 
+        "cost_price": null
+    }
+},
+{
+    "pk": 103, 
+    "model": "partner.stockrecord", 
+    "fields": {
+        "price_currency": "EUR", 
+        "product": 81, 
+        "partner_sku": "820-SS6", 
+        "price_retail": null, 
+        "date_updated": "2013-12-13T11:37:08.232Z", 
+        "num_in_stock": 100, 
+        "num_allocated": null, 
+        "low_stock_threshold": null, 
+        "date_created": "2013-12-13T11:37:08.232Z", 
+        "partner": 2, 
+        "price_excl_tax": "13", 
+        "cost_price": null
+    }
+},
+{
+    "pk": 104, 
+    "model": "partner.stockrecord", 
+    "fields": {
+        "price_currency": "EUR", 
+        "product": 82, 
+        "partner_sku": "820-SS7", 
+        "price_retail": null, 
+        "date_updated": "2013-12-13T11:37:08.232Z", 
+        "num_in_stock": 100, 
+        "num_allocated": null, 
+        "low_stock_threshold": null, 
+        "date_created": "2013-12-13T11:37:08.232Z", 
+        "partner": 2, 
+        "price_excl_tax": "14", 
+        "cost_price": null
+    }
+},
+{
+    "pk": 105, 
+    "model": "partner.stockrecord", 
+    "fields": {
+        "price_currency": "EUR", 
+        "product": 83, 
+        "partner_sku": "820-SS8", 
+        "price_retail": null, 
+        "date_updated": "2013-12-13T11:37:08.232Z", 
+        "num_in_stock": 100, 
+        "num_allocated": null, 
+        "low_stock_threshold": null, 
+        "date_created": "2013-12-13T11:37:08.232Z", 
+        "partner": 2, 
+        "price_excl_tax": "15", 
+        "cost_price": null
+    }
+}
+]

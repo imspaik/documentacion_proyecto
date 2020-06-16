@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+{% load crispy_forms_tags %}
+<style>
+{% block style %}
+.jumbotron {
+	background-color: #319e8a!important;
+}
+body {
+	background-color: #319e8ab0!important;
+}	
+	
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+<div class="jumbotron" >
+<div class="container-fluid">
+<div class='row'>
+	<div class= 'col-sm-6'>
+		<h1>{{ user.username }}</h1>
+		<p class="lead">Añade un nuevo pescado a nuestra base de datos</p>
+		
+	</div>
+	<div class= 'col-sm-6'><img src='{{ MEDIA_URL }}{{ user.usuario.foto_usuario }}' height="100"></div>
+</div></div></div>
+
+{% endblock %} 
+{% block content %}
+	<div class= 'col-sm-6 col-sm-offset-30'> 
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Añadir">
+</form>
+</div>
+{% endblock %}

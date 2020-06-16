@@ -1,0 +1,41 @@
+{% load static wagtailcore_tags wagtailimages_tags blogapp_tags wagtailroutablepage_tags %}
+
+<div class="col-md-4">
+<br>
+    <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+            <center><img src="{% static 'AppGF/images/logo.png' %}" class="mx-auto d-block" alt=""></center>
+        </div><br>
+        <div class="profile-usertitle">
+            <div class="profile-usertitle-name">
+                Cristian Galnares
+            </div>
+            <div class="profile-usertitle-job">
+                Full Stack Developer
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Widget -->
+    <div class="card my-4">
+      <h5 class="card-header">Buscar</h5>
+      <div class="card-body">
+        <form role="search" method="get" class="form-search" action="{% routablepageurl blog_page "post_search" %}" method="get">
+
+        <div class="input-group">
+          <input type="text" class="form-control search-query" name="q" placeholder="Busqueda&hellip;" title="Search for:" /><br>
+        </div>
+            <button class="btn btn-primary" type="submit">Buscar</button>
+
+
+
+        </form>
+      </div>
+    </div>
+
+    {% categories_list %}
+
+    {% tags_list %}
+
+</div>

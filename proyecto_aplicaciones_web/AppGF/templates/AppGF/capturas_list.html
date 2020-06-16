@@ -1,0 +1,92 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load display_tags %}
+{% load i18n %}
+{% load image_tags %}
+{% load reviews_tags %}
+<!DOCTYPE html>
+<html lang="es">
+	
+<style>
+{% block style %}
+
+body {
+	background-color: black!important;
+}	
+.myboton {
+  padding: 8px 20px !important;
+  background: #c52d2f !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  margin-top: 25px !important;
+  display: inline-block !important;
+}
+	
+{% endblock %}
+</style>
+
+{% block content %}
+<body>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'galerias.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="thumbnail-gallery.css">
+
+</head>
+<body>
+
+<div class="container gallery-container">
+
+<br><p class="page-description text-center lead"> <font color="white">Estas son las capturas realizadas por todos los usuarios de la aplicacion<br>
+
+
+
+
+    <div class="tz-gallery">
+
+        <div class="row">
+			
+{% if request.user.is_authenticated %}
+<center><a class="myboton" href="{% url 'capturas_create' %}">Añadir Captura</a></center></p>
+{% else %}
+<br><p class="page-description text-center lead"> <font color="white">Para poder añadir capturas debes ser un usuario registrado.<br>
+{% endif %}
+<br>
+{% for captura in object_list %}
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail2"><center><font color="black">El pescado capturado es {{ captura.pescado  }}<br>
+						<br><a href='captura/detail/{{ captura.pk  }}'><i class="fa fa-eye" aria-hidden="true"></i>Detalles de la captura </a></center><br>
+                    <a class="lightbox" href='{{ MEDIA_URL }}{{ captura.foto_captura }}'width="50%" height="50%">
+                        <img src='{{ MEDIA_URL }}{{ captura.foto_captura }}' width="50%" height="50%" alt="{{ pescado.nombre_comun_pescado  }}">
+                    </a>
+                    <div class="caption">
+                       
+								Fecha: {{ captura.fecha_captura  }}<br>
+								Lugar de captura: {{ captura.zona  }}<br>  
+								Pescador: {{ captura.usuario  }}<br>
+								Cantidad: {{ captura.cantpes  }} <br>
+								Caña utilizada: <u><a href='{{ captura.caña.get_absolute_url }}'><i class="fa fa-eye" aria-hidden="true"></i> {{ captura.caña  }}</a></u><br>
+								Señuelo utilizado: <u><a href='{{ captura.señuelo.get_absolute_url }}'><i class="fa fa-eye" aria-hidden="true"></i> {{ captura.señuelo  }}</a></u><br>
+								Carrete utilizado: <u><a href='{{ captura.carrete.get_absolute_url }}'><i class="fa fa-eye" aria-hidden="true"></i> {{ captura.carrete  }}</a></u><br>
+													
+                    </div>
+                </div>
+            </div>
+{% endfor %}
+
+
+</div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+</body>
+</html>
+
+{% endblock %} 

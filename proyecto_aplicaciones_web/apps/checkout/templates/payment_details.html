@@ -1,0 +1,37 @@
+{% extends 'oscar/checkout/payment_details.html' %}
+{% load i18n %}
+{% load currency_filters %}
+
+{% block payment_details %}
+    <div class="well">
+        <div class="sub-header">
+            <h3>Pagar con PayPal</h3>
+        </div>
+        <p>{% trans "Click on the below icon to use Express Checkout but where the shipping address and method is already chosen on the merchant site." %}</p>
+        <div style="overflow:auto"><a href="{% url 'paypal-direct-payment' %}" title="{% trans "Pay with PayPal" %}"><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;"></a>&nbsp;</div>
+    </div>
+    
+    <div class="well">
+        <div class="sub-header">
+            <h3>Pagar con tarjeta de crédito</h3>
+        </div>
+      <form action="{% url 'checkout:preview' %}" class="form-stacked" method="POST">
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ stripe_publishable_key }}" data-amount="{{ order_total_incl_tax_cents }}"
+            data-name="La Pescaleta"
+            data-description="{{ basket.num_items }} items ({{ order_total.incl_tax|currency }})">
+    </script>
+            </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $(".stripe-button-el span").remove();
+            $("button.stripe-button-el").removeAttr('style').css({
+                "display":"inline-block",
+                "padding":"15px",
+                "background":"#3fb0ac",
+                "color":"white",
+                "font-size":"1.3em" }).html("Pagar con tarjeta");
+        });
+</script>
+</form>
+{% endblock payment_details %}

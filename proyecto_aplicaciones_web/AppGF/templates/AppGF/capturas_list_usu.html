@@ -1,0 +1,77 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="es">
+	
+<style>
+{% block style %}
+
+body {
+	background-color: black!important;
+}
+.myboton {
+  padding: 8px 20px !important;
+  background: #c52d2f !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  margin-top: 25px !important;
+  display: inline-block !important;
+}	
+	
+{% endblock %}
+</style>
+
+{% block content %}
+<body>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'galerias.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="thumbnail-gallery.css">
+
+</head>
+<body>
+
+<div class="container gallery-container">
+
+<br><p class="page-description text-center lead"> <font color="white">Estas son las capturas que has realizado desde que estás registrado</p><br>
+    
+    <div class="tz-gallery">
+
+        <div class="row">
+			
+{% for captura in captura_list.all %}
+{% if user == captura.usuario.user %}
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail"><center>Su nombre comun es <b>{{ captura.pescado  }}</b><br>
+						<br><a href="{% url 'captura_detail' pk=captura.pk  %}">Ver Detalles de la captura </a></center><br>
+                    <a class="lightbox" href='{{ MEDIA_URL }}{{ captura.pescado.foto_pescado }}'>
+                        <img src='{{ MEDIA_URL }}{{ captura.pescado.foto_pescado }}'  alt="{{ pescado.nombre_comun_pescado  }}">
+                    </a>
+                    <div class="caption">
+                        <center>Su nombre cientifico es:<b> {{ captura.pescado.nombre_cientifico }} </b></center><br>
+                        <center>Fecha: {{ captura.fecha_captura  }}<br> 
+							Nombre del pescador: {{ captura.usuario  }}<br>
+							Cantidad: {{ captura.cantpes  }} <br>
+							Señuelo utilizado: {{ captura.señuelo  }}<br>
+							<a class="myboton" href="{% url 'capturas_update' captura.pk %}" role="button">Modificar Captura</a><br>
+					   <a class="myboton" href="{% url 'capturas_delete' captura.pk %}" role="button">Borrar Captura</a></center>
+                    </div>
+                </div>
+            </div>
+
+{% endif %} 
+{% endfor %}
+</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+</body>
+</html>
+
+{% endblock %} 

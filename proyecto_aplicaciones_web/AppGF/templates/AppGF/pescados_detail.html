@@ -1,0 +1,27 @@
+{% extends 'base_generic.html' %}
+<style>
+{% block style %}
+.jumbotron {
+	background-color: #319e8a!important;
+}
+body {
+	background-color: #319e8ab0!important;
+}	
+	
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+<div class="jumbotron" >
+<div class="container-fluid">
+<div class='row'>
+	<div class= 'col-sm-6'>
+		<h1> {{ object.nombre_comun_pescado }}</h1>
+		<p>Nombre cientifico:{{ object.nombre_cientifico }}</p>
+		<p class="lead">{{ object.descripcion_pescado }}</p>
+		<a class="btn btn-lg btn-primary" href="../" role="button">Volver</a>
+	</div>
+	<div class= 'col-sm-6'><img src='{{ MEDIA_URL }}{{ object.foto_pescado }}' height="200"></div>
+</div>
+
+{% endblock %}

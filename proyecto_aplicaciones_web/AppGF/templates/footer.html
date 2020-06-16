@@ -1,0 +1,58 @@
+{% load static %}
+{% load i18n %}
+{% block footer %}
+      
+<!-- //footer -->
+<div class="footer">
+		<div class="container">
+			<div class="w3_footer_grids">
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Contacto</h3>
+					
+					<ul class="address">
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:gidifishing@example.com">gadifishing@example.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Información</h3>
+					<ul class="info"> 
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">Sobre Gadifishing</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">Contacto</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">FAQ's</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Secciones</h3>
+					<ul class="info"> 
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{% url 'pescados_list' %}">Pescados</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{% url 'capturas_list' %}">Capturas</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/blog">Blog</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Perfil</h3>
+					<ul class="info"> 
+						{% if request.user.is_authenticated %}
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href='/usuario/detail/{{ user.pk  }}'>Perfil de pescador</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href='/captura/detail/{{ user.username }}'>Mis capturas</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+						{% else %}
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{% url 'customer:login' %}">Login/Registro</a></li>
+						{% endif %}
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		
+		
+		
+	</div>	
+	<div class="footer-botm">
+				<center><p style="color:white">© 2020 La Pescaleta SHOP. Todos los derechos reservados</a></p></center>
+
+
+		</div>
+<!-- //footer -->	
+    {% endblock %}

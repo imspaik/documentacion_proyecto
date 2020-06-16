@@ -1,0 +1,278 @@
+[
+	{
+		"pk": 1,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Número",
+			"code": "numero",
+			"product_class": 1,
+			"option_group": null,
+			"required": false,
+			"type": "text"
+		}
+	},
+	{
+    "pk": 2, 
+    "model": "catalogue.productattribute", 
+    "fields": {
+        "required": false, 
+        "product_class": 1, 
+        "option_group": 1, 
+        "code": "marcas", 
+        "type": "option", 
+        "name": "Marca"
+    }
+},
+	{
+    "pk": 1, 
+    "model": "catalogue.attributeoptiongroup", 
+    "fields": {
+        "name": "Marca"
+    }
+},
+{
+    "pk": 1, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Akami"
+    }
+},
+{
+    "pk": 2, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Maruto"
+    }
+},
+{
+    "pk": 3, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "ZunZun"
+    }
+},
+{
+    "pk": 4, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Hayabusa"
+    }
+},
+{
+    "pk": 5, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Kashima"
+    }
+},
+{
+    "pk": 6, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Sugoi"
+    }
+},
+{
+    "pk": 7, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Sele"
+    }
+},
+{
+    "pk": 8, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Str"
+    }
+},
+{
+    "pk": 9, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Banax"
+    }
+},
+{
+    "pk": 10, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Little fish"
+    }
+},
+{
+    "pk": 11, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Ryoko"
+    }
+},
+	{
+		"pk": 3,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Unidades por paquete",
+			"code": "unidades",
+			"product_class": 1,
+			"option_group": null,
+			"required": false,
+			"type": "integer"
+		}
+	},
+	{
+		"pk": 4,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Acción (lbs)",
+			"code": "accion",
+			"product_class": 2,
+			"option_group": null,
+			"required": false,
+			"type": "float"
+		}
+	},
+	{
+		"pk": 5,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Largo (m)",
+			"code": "largo",
+			"product_class": 2,
+			"option_group": null,
+			"required": false,
+			"type": "float"
+		}
+	},
+	{
+    "pk": 6, 
+    "model": "catalogue.productattribute", 
+    "fields": {
+        "required": false, 
+        "product_class": 2, 
+        "option_group": 1, 
+        "code": "marcas", 
+        "type": "option", 
+        "name": "Marca"
+    }
+},
+	{
+		"pk": 7,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Peso (g)",
+			"code": "peso",
+			"product_class": 2,
+			"option_group": null,
+			"required": false,
+			"type": "float"
+		}
+	},
+	{
+		"pk": 8,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "SEC",
+			"code": "sec",
+			"product_class": 2,
+			"option_group": null,
+			"required": false,
+			"type": "integer"
+		}
+	},
+	{
+		"pk": 9,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Capacidad (m)",
+			"code": "capacidad",
+			"product_class": 3,
+			"option_group": null,
+			"required": false,
+			"type": "text"
+		}
+	},
+		{
+		"pk": 10, 
+		"model": "catalogue.productattribute", 
+		"fields": {
+			"required": false, 
+			"product_class": 3, 
+			"option_group": 1, 
+			"code": "marcas", 
+			"type": "option", 
+			"name": "Marca"
+    }
+},
+	{
+		"pk": 11,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Peso (g)",
+			"code": "pesocarretes",
+			"product_class": 3,
+			"option_group": null,
+			"required": false,
+			"type": "integer"
+		}
+	},
+	{
+		"pk": 12,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Ratio",
+			"code": "ratio",
+			"product_class": 3,
+			"option_group": null,
+			"required": false,
+			"type": "text"
+		}
+	},
+	{
+		"pk": 13,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Rodamientos",
+			"code": "rodamientos",
+			"product_class": 3,
+			"option_group": null,
+			"required": false,
+			"type": "integer"
+		}
+	},
+	{
+		"pk": 14,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Peso (g)",
+			"code": "pesocebos",
+			"product_class": 4,
+			"option_group": null,
+			"required": false,
+			"type": "float"
+		}
+	},
+			{
+		"pk": 15,
+		"model": "catalogue.productattribute",
+		"fields": {
+			"name": "Unidades",
+			"code": "unidadescebos",
+			"product_class": 4,
+			"option_group": null,
+			"required": false,
+			"type": "text"
+		}
+	}
+	
+]

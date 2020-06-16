@@ -1,0 +1,234 @@
+[
+{
+    "pk": 1, 
+    "model": "catalogue.productclass", 
+    "fields": {
+        "track_stock": true, 
+        "options": [], 
+        "requires_shipping": true, 
+        "name": "Anzuelos", 
+        "slug": "anzuelos"
+    }
+},
+{
+		"pk": 1, 
+		"model": "catalogue.category", 
+		"fields": {
+			"description": "", 
+			"numchild": 6, 
+			"slug": "anzuelos", 
+			"depth": 1, 
+			"path": "0001",
+			"image": "", 
+			"name": "Anzuelos"
+	}
+},
+{
+	"pk": 2, 
+    "model": "catalogue.category", 
+    "fields": {
+        "description": "", 
+        "numchild": 0,
+        "slug": "ino",  
+        "depth": 2, 
+        "path": "0001002",
+        "image": "", 
+        "name": "Acero inox"
+    }
+},
+{
+	"pk": 3, 
+    "model": "catalogue.category", 
+    "fields": {
+        "description": "", 
+        "numchild": 0,
+        "slug": "aparejos",  
+        "depth": 2, 
+        "path": "0001003",
+        "image": "", 
+        "name": "Aparejos"
+    }
+},
+{
+	"pk": 4, 
+    "model": "catalogue.category", 
+    "fields": {
+        "description": "", 
+        "numchild": 0,
+        "slug": "carbono",  
+        "depth": 2, 
+        "path": "0001004",
+        "image": "", 
+        "name": "Carbono"
+    }
+},
+{
+	"pk": 5, 
+    "model": "catalogue.category", 
+    "fields": {
+        "description": "", 
+        "numchild": 0,
+        "slug": "montados",  
+        "depth": 2, 
+        "path": "0001005",
+        "image": "", 
+        "name": "Montados"
+    }
+},
+{
+	"pk": 6, 
+    "model": "catalogue.category", 
+    "fields": {
+        "description": "", 
+        "numchild": 0,
+        "slug": "triplex",  
+        "depth": 2, 
+        "path": "0001006",
+        "image": "", 
+        "name": "Triplex"
+    }
+},
+{
+	"pk": 7, 
+    "model": "catalogue.category", 
+    "fields": {
+        "description": "", 
+        "numchild": 0,
+        "slug": "triplexcarbono",  
+        "depth": 2, 
+        "path": "0001007",
+        "image": "", 
+        "name": "Triplex carbono"
+    }
+},
+{
+    "pk": 1, 
+    "model": "catalogue.productattribute", 
+    "fields": {
+        "required": true, 
+        "product_class": 1, 
+        "code": "numero", 
+        "type": "text", 
+        "name": "Numero"
+    }
+},
+	{
+    "pk": 2, 
+    "model": "catalogue.productattribute", 
+    "fields": {
+        "required": false, 
+        "product_class": 1, 
+        "option_group": 1, 
+        "code": "marcas", 
+        "type": "option", 
+        "name": "Marca"
+    }
+},
+{
+    "pk": 3, 
+    "model": "catalogue.productattribute", 
+    "fields": {
+        "required": true, 
+        "product_class": 1, 
+        "code": "unidades", 
+        "type": "integer", 
+        "name": "Unidades por paquete"
+    }
+},
+
+	{
+    "pk": 1, 
+    "model": "catalogue.attributeoptiongroup", 
+    "fields": {
+        "name": "Marca"
+    }
+},
+{
+    "pk": 1, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Akami"
+    }
+},
+{
+    "pk": 2, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Maruto"
+    }
+},
+{
+    "pk": 3, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "ZunZun"
+    }
+},
+{
+    "pk": 4, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Hayabusa"
+    }
+},
+{
+    "pk": 5, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Kashima"
+    }
+},
+{
+    "pk": 6, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Sugoi"
+    }
+},
+{
+    "pk": 7, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Sele"
+    }
+},
+{
+    "pk": 8, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Str"
+    }
+},
+{
+    "pk": 9, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Banax"
+    }
+},
+{
+    "pk": 10, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Little fish"
+    }
+},
+{
+    "pk": 11, 
+    "model": "catalogue.attributeoption", 
+    "fields": {
+        "group": 1, 
+        "option": "Ryoko"
+    }
+}
+]

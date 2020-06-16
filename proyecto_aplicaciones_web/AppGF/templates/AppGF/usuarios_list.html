@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Lista de usuarios</h2>
+    <ul>
+        {% for usuario in object_list %}
+            <li><a href='detail/{{ usuario.pk  }}'>
+				Nombre de cuenta: {{ usuario.user  }}<br>
+				Nombre del pescador: {{ usuario.nombre  }}<br>
+				Correo electronico: {{ usuario.email_usuario  }}</a><br>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+			<button class="btn btn-success"><a href='./update/{{ usuario.pk  }}'>Editar Perfil</a></button>
+			<button class="btn btn-success"><a href='./delete/{{ usuario.pk  }}'>Borrar Perfil</a></button></li>
+        {% endfor %}
+    </ul>
+{% endblock %} 
+
+
+
+

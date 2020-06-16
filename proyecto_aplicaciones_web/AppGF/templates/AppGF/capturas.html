@@ -1,0 +1,47 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="es">
+	
+<style>
+{% block style %}
+
+body {
+	background-color: black!important;
+}	
+	
+{% endblock %}
+</style>
+
+{% block content %}
+<body>
+
+<br>        <div class="container ">
+           <div class="center wow fadeInDown">
+                <h2>Añade una nueva captura</h2>
+           </div>
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="form-group col-md-6 mb-0">    {{ form.as_p }}
+    
+    {{ capturas.pescado|as_crispy_field }}
+    {{ capturas.zona|as_crispy_field }}
+    {{ capturas.marea|as_crispy_field }}
+    {{ capturas.cantidad|as_crispy_field }}
+    {{ capturas.caña|as_crispy_field }}
+    {{ capturas.carrete|as_crispy_field }}
+    {{ capturas.señuelo|as_crispy_field }}
+    {{ capturas.fecha_captura|as_crispy_field }}
+    {{ capturas.foto_captura|as_crispy_field }}
+    
+    <input type="submit" value="Guardar"></div>
+
+  </form>
+
+ </div>
+{% endblock %}
+		<a class="btn btn-lg btn-primary" href='/captura/detail/{{ user.username }}' role="button">Volver</a>

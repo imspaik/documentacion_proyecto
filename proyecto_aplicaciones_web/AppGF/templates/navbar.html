@@ -1,0 +1,91 @@
+{% load i18n %}
+{% load static %}
+{% load currency_filters %}
+{% load category_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Super Market Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="{% static 'tienda/css/bootstrap.css' %}" rel="stylesheet" media="all" />
+<link href="{% static 'AppGF/css/style.css' %}" rel="stylesheet"  media="all" />
+<!-- font-awesome icons -->
+<link href="{% static 'tienda/css/font-awesome.css' %}" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<!-- js -->
+
+<!-- //js -->
+<link href='//fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+
+</script>
+	<div class="logo_products">
+		<div class="container">
+		<div class="w3ls_logo_products_left1">
+				<ul class="phone_email">
+					<li><br><i class="fa fa-phone" aria-hidden="true"> Información: 123456789</i></li>
+					
+				</ul>
+			</div>
+			<div class="w3ls_logo_products_left">
+				<center><img class="img-responsive" src="{% static 'AppGF/images/logo.jpg' %}"></center>
+			</div><br>
+			<div class="w3layouts-top">
+					<ul>
+						<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+<!-- navigation -->
+	<div class="navigation-agileits">
+		<div class="container">
+			<nav class="navbar navbar-default">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header nav_2">
+								<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div> 
+							<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+								<ul class="nav navbar-nav">
+									<li class="active"><a href="{% url 'offer:list' %}" class="act">Inicio</a></li>
+									<li class="active"><a href="{% url 'inicio' %}" class="act">Gadifishing</a></li>
+									<li class="active"><a href="/blog" class="act">Blog</a></li>
+									<li class="active"><a href="{% url 'pescados_list' %}" class="act">Pescados</a></li>
+									<li class="active"><a href="{% url 'capturas_list' %}" class="act">Capturas</a></li>
+							{% if request.user.is_authenticated %}
+							<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }} <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href='/usuario/detail/{{ user.pk  }}'>Perfil de pescador</a></li>
+								<li><a href="{% url 'usuarios_update' user.pk %}">Editar perfil</a></li>
+                                <li><a href='/captura/detail/{{ user.username }}'>Mis capturas</a></li>                              
+                                <li><a href="{% url 'capturas_create' %}">Añadir capturas</a></li>
+                                <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+							</ul>
+							</li>
+							{% else %}
+							<li><a id="login_link" href="{% url 'customer:login' %}">Login/Registro</a></li> 
+                        {% endif %}                      
+							</div>
+							</nav>
+			</div>
+		</div>
+<!-- //navigation -->
+</head>

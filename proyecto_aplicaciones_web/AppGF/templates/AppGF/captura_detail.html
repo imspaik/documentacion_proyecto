@@ -1,0 +1,60 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="es">
+	
+<style>
+{% block style %}
+
+body {
+	background-color: black!important;
+}	
+.myboton {
+  padding: 8px 20px !important;
+  background: #c52d2f !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  margin-top: 25px !important;
+  display: inline-block !important;
+}	
+	
+{% endblock %}
+</style>
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <section id="main-slider" class="no-margin">
+<br>
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Estos son los detalles de la captura seleccionada</h1>
+                                    <ul><br><br>
+		<h1>{{ object.headline }}</h1>
+		<p>{{ object.content }}</p>
+		<p>Dia de la captura: {{ object.fecha_captura }}</p>
+		<p>Nombre común del pescado: {{ object.pescado }} 
+		<p>Numero de capturas de esta pieza: {{ object.cantpes }}</p>
+		<p>El señuelo que he utilizado ha sido {{ object.señuelo }} {{ object.señuelo.material_señuelo }} </p>
+		<p>El pescador ha sido: {{ object.usuario }}</p>
+		<p>El equipo utilizado ha sido: caña: {{ object.caña }}, carrete: {{ object.carrete }} y señuelo {{ object.señuelo }} </p>
+		<p>En el momento de esta captura la marea tenia un estado de {{ object.marea }}</p><br>
+</ul>  
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="{{ MEDIA_URL }}{{ object.pescado.foto_pescado }}" class="img-responsive"><br>
+                                </div>
+
+                </div><!--/.item-->		
+    </section><!--/#main-slider-->
+</body>
+</html>    
+{% endif %} 
+{% endblock %} 
+		<a class="btn btn-lg btn-primary" href="../" role="button">Volver</a>

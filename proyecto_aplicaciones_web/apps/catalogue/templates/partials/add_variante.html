@@ -1,0 +1,33 @@
+{% load basket_tags %}
+{% load display_tags %}
+{% load i18n %}
+{% load currency_filters %}
+{% load purchase_info_tags %}
+
+                    <form id="add_to_basket_form" action="{% url 'basket:add' pk=product.pk  %}" method="post" class="add-to-basket">
+                    {% csrf_token %}
+                    {% include "oscar/partials/form_fields.html" with form=basket_form %}
+                    <label for="id_quantity">Cantidad:</label>
+                    <br><br>
+                    <div class="number-input">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+					<input class="quantity" min="0" name="quantity" value="1" type="number" id="id_quantity" min="0">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+					</div>
+                    <div class="form-group ">
+						<br>
+                    <label for="id_child_id">Número de anzuelo</label>
+					<br><br>
+                    <select name="child_id" class="form-control2" id="id_child_id" onchange="validarnivel()">
+                    {% for child in product.children.all %}
+                        {% purchase_info_for_product request child as child_session %}
+                        {% if child_session.availability.is_available_to_buy %}
+                            <option name="variantes" value="{{ child.pk }}" data-precio="{{ child_session.price.incl_tax|currency:child_session.price.currency }}" data-iva="{{ child_session.price.excl_tax|currency:child_session.price.currency }}">{{ child.get_title }} -- {{ child_session.price.incl_tax|currency:child_session.price.currency }}</option>
+                        {% endif %}
+                        
+                    {% endfor %}
+                    </select>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" value="{% trans "Add to basket" %}" data-loading-text="{% trans 'Adding...' %}">{% trans "Add to basket" %}</button>
+                </form>

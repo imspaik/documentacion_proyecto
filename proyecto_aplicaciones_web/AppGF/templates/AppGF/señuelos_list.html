@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Materiales de los Señuelos</h2>
+    <ul>
+        {% for mat in object_list %}
+            <li>{{ mat.nombre_señuelo  }} - {{ mat.material_señuelo  }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %} 

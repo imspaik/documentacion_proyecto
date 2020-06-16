@@ -1,0 +1,85 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+<style>
+{% block style %}
+.jumbotron {
+	background-color: #319e8a!important;
+}
+body {
+	background-color: #319e8ab0!important;
+}
+.tz-gallery .thumbnail {
+	width: 250px!important;
+	height: 200px!important;
+    padding: 0;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: none;
+    transition: 0.15s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}     	
+	
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+<div class="jumbotron" >
+<div class="container-fluid">
+<div class='row'>
+	<div class= 'col-sm-6'>
+		<h1 class= "text-align-center">Galeria de Fotos</h1><br><br>
+		<center><a class="btn btn-lg btn-primary" href="{% url 'capturas_create' %}" role="button">Añadir nueva captura</a></center>
+	</div>
+	<div class= 'col-sm-6'><br><center><img src="{% static '/images/logo.png' %}"></center></div>
+</div>
+</div>
+</div>
+{% endblock %} 
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+	
+<head>
+    <link rel="stylesheet" href="{% static 'galerias.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="thumbnail-gallery.css">
+    
+        <title>Fotolog de nuestros pescadores</title>    
+</head>
+
+  <body>
+	  
+<div class="container gallery-container">
+
+    <p class="page-description text-center lead">Lista de las capturas realizadas por los usuarios.</p><br>
+    
+    <div class="tz-gallery">
+
+        <div class="row">	  
+{% for image in images %}
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a class="lightbox" href="{{image.image}}">
+                        <img src="{{image.image}}" alt="{{image.name}}">
+                </div>
+            </div>
+
+    {% endfor %}
+        </div>
+
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+</body>
+</html>
+
+{% endblock %} 
+
