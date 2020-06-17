@@ -1,0 +1,117 @@
+{% load static %}
+{% load i18n %}
+{% block footer %}
+{% load category_tags %}
+<!--brands-->
+<br>
+	<div class="brands">
+		<div class="container">
+		<h3 style="color:white">Nuestras marcas</h3>
+			<div class="brands-agile">
+				<div class="col-md-2 w3layouts-brand">
+					<div class="brands-w3l">
+						<img class="img-responsive" src="{% static 'tienda/images/marcas/zunzun.jpg' %}">
+					</div>
+				</div>
+				<div class="col-md-2 w3layouts-brand">
+					<div class="brands-w3l">
+						<img class="img-responsive" src="{% static 'tienda/images/marcas/banax.jpg' %}">
+					</div>
+				</div>
+				<div class="col-md-2 w3layouts-brand">
+					<div class="brands-w3l">
+						<img class="img-responsive" src="{% static 'tienda/images/marcas/gosen.jpg' %}">
+					</div>
+				</div>
+				
+				<div class="col-md-2 w3layouts-brand">
+					<div class="brands-w3l">
+						<img class="img-responsive" src="{% static 'tienda/images/marcas/kashima.jpg' %}">
+					</div>
+				</div>
+				<div class="col-md-2 w3layouts-brand">
+					<div class="brands-w3l">
+						<img class="img-responsive" src="{% static 'tienda/images/marcas/maruto.jpg' %}">
+					</div>
+				</div>
+				<div class="col-md-2 w3layouts-brand">
+					<div class="brands-w3l">
+						<img class="img-responsive" src="{% static 'tienda/images/marcas/dtd.jpg' %}">
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>	
+<!--//brands-->        
+<!-- //footer -->
+<div class="footer">
+		<div class="container">
+			<div class="w3_footer_grids">
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Contacto</h3>
+					
+					<ul class="address">
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>C\ Sagasta Nº 10<span>Cádiz, España.</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Información</h3>
+					<ul class="info"> 
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">Sobre nosotros</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">Contacto</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">Códigos</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">FAQ's</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">Productos especiales</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Categorías</h3>
+					{% category_tree depth=1 as tree_categories %}
+					{% if tree_categories %}
+					{% for tree_category in tree_categories %}
+					<ul class="info"> 	
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="{{ tree_category.get_absolute_url }}" class="active">{{ tree_category.name }}</a></li>
+						{% for close in tree_category.num_to_close %}
+					</ul>
+						{% endfor %}
+						{% endfor %}
+                        {% endif %}
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Perfil</h3>
+					<ul class="info"> 
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">Perfil</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">Carrito</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">Login/Registro</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		
+		<div class="footer-copy">		
+				<p>© 2020 La Pescaleta SHOP. Todos los derechos reservados</a></p>
+		</div>
+		
+	</div>	
+	<div class="footer-botm">
+			<div class="container">
+				<div class="w3layouts-foot">
+					<ul>
+						<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<div class="payment-w3ls">	
+					<img src="{% static 'tienda/images/card.png' %}" alt=" " class="img-responsive">
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+<!-- //footer -->	
+    {% endblock %}
